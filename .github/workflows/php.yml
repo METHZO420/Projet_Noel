@@ -1,13 +1,24 @@
 name: My Workflow
 
 on:
-  schedule:
-    - cron: '54 20 * * *'
+  workflow_dispatch:
 
 jobs:
-  my_job:
+  build:
+
     runs-on: ubuntu-latest
 
     steps:
-      - name: Hello, world!
-        run: echo "Hello, world!"
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.1'  # Vous pouvez spécifier la version de PHP que vous utilisez
+
+    - name: Install Composer dependencies
+      run: composer install 
+
+    - name: Run PHPUnit tests
+      run: vendor/bin/phpunit
