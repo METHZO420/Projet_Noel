@@ -8,7 +8,7 @@ $mdp = '';
 $db =new mysqli($serveur,$user ,$mdp ,$dbname );
 
 if(!$db){
-    echo "Erreur de connexion";
+    echo "Erreur ";
 }else{
 }
 
