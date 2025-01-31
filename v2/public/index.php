@@ -4,10 +4,10 @@ require_once"./header.php";
 require_once"../app/database.php";
 $conn=new Database;
 $db=$conn->getconnection();
-require_once"../app/models/cours.php";
-$mc=new Cours;
-require_once"../app/controllers/CoursController.php";
-$cc=new CoursController;
+require_once"../app/models/Rv.php";
+$mc=new Rv;
+require_once"../app/controllers/RvController.php";
+$cc=new RvController;
 
 require_once"../app/models/Client.php";
 $me=new Client;
@@ -20,32 +20,32 @@ require_once"./topbar.php";
     if($_GET['redirect']=="Gestionclient"){
         $ce->indexclient();
     }
-    if($_GET[ 'redirect']=='Gestioncours'){
+    if($_GET[ 'redirect']=='Gestionrv'){
         $cc->index();    }
 
   }
   if (isset($_GET['page'])) {
-    if($_GET['page']=='Showcours'){ 
+    if($_GET['page']=='Showrv'){ 
          $cc->index();
        
     }
 
     if($_GET['page']=='Ajout'){ 
-        require_once"../app/views/cours/create.php";
+        require_once"../app/views/rv/create.php";
     }
-    if($_GET['page']=='deletecours'){
-        $cc->supprimerCours();
-    }if($_GET['page']=='modifiercours'){
+    if($_GET['page']=='deleterv'){
+        $cc->supprimerrv();
+    }if($_GET['page']=='modifierrv'){
         $cc-> modifredirect();
     }  
 }
 if(isset($_GET['action'])){
-    if($_GET['action']=='savecours'){
-        $cc->addcours();
+    if($_GET['action']=='saverv'){
+        $cc->addrv();
 
     }
-    if($_GET['action']=='modifcours'){
-        $cc-> modifiercours();
+    if($_GET['action']=='modifrv'){
+        $cc-> modifierrv();
 
     }
 
