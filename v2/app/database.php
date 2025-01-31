@@ -4,7 +4,7 @@ class Database{
 private $serveur="localhost";
 private $user="root";
 private $pwd="";
-private $dbname="projet_gestion_universitaire";
+private $dbname="projetgestion_rv";
 
 
 public function getConnection(){
