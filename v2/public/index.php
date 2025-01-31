@@ -9,16 +9,16 @@ $mc=new Cours;
 require_once"../app/controllers/CoursController.php";
 $cc=new CoursController;
 
-require_once"../app/models/Etudiant.php";
-$me=new Etudiant;
-require_once"../app/controllers/EtudiantController.php";
-$ce=new EtudiantController;
+require_once"../app/models/Client.php";
+$me=new Client;
+require_once"../app/controllers/ClientController.php";
+$ce=new ClientController;
 require_once"./topbar.php";
 
   if(isset($_GET['redirect'])){
 
-    if($_GET['redirect']=="Gestionetd"){
-        $ce->indexetd();
+    if($_GET['redirect']=="Gestionclient"){
+        $ce->indexclient();
     }
     if($_GET[ 'redirect']=='Gestioncours'){
         $cc->index();    }
@@ -51,35 +51,27 @@ if(isset($_GET['action'])){
 
 }
 
-?>
-
-
-
-<?php 
-
-
- 
   if (isset($_GET['page'])) {
-    if($_GET['page']=='Showetd'){ 
-        $ce->indexetd();
+    if($_GET['page']=='Showclient'){ 
+        $ce->indexclient();
     }
 
-    if($_GET['page']=='Ajoutetd'){ 
-        require_once"../app/views/etudiants/create.php";
+    if($_GET['page']=='Ajoutclient'){ 
+        require_once"../app/views/client/create.php";
     }
-    if($_GET['page']=='deletetd'){
-        $ce->supprimeretd();
-    }if($_GET['page']=='modifieretd'){
-        $ce->modifredirectetd();
+    if($_GET['page']=='deleteclient'){
+        $ce->supprimerclient();
+    }if($_GET['page']=='modifierclient'){
+        $ce->modifredirectclient();
     }  
 }
 if(isset($_GET['action'])){
-    if($_GET['action']=='savetd'){
-        $ce->addetd();
+    if($_GET['action']=='saveclient'){
+        $ce->addclient();
 
     }
-    if($_GET['action']=='modifetd'){
-        $ce->modifieretd();
+    if($_GET['action']=='modifclient'){
+        $ce->modifierclient();
 
     }
 

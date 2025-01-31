@@ -7,7 +7,7 @@
                 </li>
 
                 <li style="margin-left: 60px;"class="navbar ">
-                    <a href="?redirect=Gestionetd"  class="nav-link text-light"> Etudiants</a>
+                    <a href="?redirect=Gestionclient"  class="nav-link text-light"> Client</a>
                 </li>
             </ul>
         </div>
