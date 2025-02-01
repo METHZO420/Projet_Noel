@@ -1,0 +1,32 @@
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header bg-dark text-light">
+                        <h5>Ajouter Cours</h5>
+                    </div>
+                    <div class="card-body">
+                        <form action="?action=saveequipement" method="POST">
+                            <div class="mb-3">
+                                <label for="nom" class="form-label">Nom de l'equipement</label>
+                                <input type="text" class="form-control" id="nom" name="nom" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="etat" class="form-label">Etat</label>
+                                <input type="text" class="form-control" id="etat" name="etat" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="disponibilite" class="form-label">Disponibilite</label>
+                                <input type="text" class="form-control" id="disponibilite" name="disponibilite"  required> 
+                            </div>
+                            <button type="submit" class="btn btn-outline-success" >Ajouter</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+
+<div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header bg-dark text-light">
+                        <h5>Modifier Cours</h5>
+                    </div>
+                    <div class="card-body">
+                        <form action="?action=modifequipement" method="POST">
+                        <div class="mb-3">
+                                <label for="idcours" class="form-label">id</label>
+                                <input type="text" class="form-control" value="<?php echo"$idval"?>" id="nomid" name="id" readonly>
+                            </div>
+                            <div class="mb-3">
+                                <label for="nomcours" class="form-label">Nom de l'equipement</label>
+                                <input type="text" class="form-control"value="<?php echo"$nomval"?>" id="nom" name="nom" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="etat" class="form-label">Etat</label>
+                                <input type="text" class="form-control"value="<?php echo"$etatval"?>" id="etat" name="etat" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="disponibilite" class="form-label">Disponibilite</label>
+                                <input type="text" class="form-control" value="<?php echo"$disponibiliteval"?>" id="disponibilite" name="disponibilite"  required> 
+                            </div>
+                            <button type="submit" class="btn btn-outline-success" >Modifier</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
