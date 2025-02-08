@@ -6,7 +6,13 @@ require'../bootstrap.php';
 require_once'../app/models/Animaux.php';
 require_once"../app/models/equipement.php";
 require_once"../app/models/animauxModels.php";
+require_once '../vendor/autoload.php';
 
+$loadera = new \Twig\Loader\FilesystemLoader(paths: '../app/views/animal');
+$twiga = new \Twig\Environment($loadera, [ ]);
+//////////////////////////////////////
+$loadere = new \Twig\Loader\FilesystemLoader(paths: '../app/views/equipement');
+$twige = new \Twig\Environment($loadere, [ ]);
 $ma=new AnimauxModel;
 require_once"../app/controllers/animauxController.php";
 $ce=new AnimauxController;
@@ -33,7 +39,7 @@ $cc=new EquipementController;
     }
 
     if($_GET['page']=='Ajout'){ 
-        require_once"../app/views/equipement/create.php";
+        require_once"../app/views/equipement/create.html.twig";
     }
     if($_GET['page']=='deleteequipement'){
         $cc->supprimerequipement();
@@ -59,7 +65,7 @@ if(isset($_GET['action'])){
     }
 
     if($_GET['page']=='Ajoutanimal'){ 
-        require_once"../app/views/animal/create.php";
+        require_once"../app/views/animal/create.html.twig";
     }
     if($_GET['page']=='deletanimal'){
         $ce->supprimeranimal();

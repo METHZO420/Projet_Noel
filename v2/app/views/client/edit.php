@@ -4,7 +4,7 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-header bg-dark text-light">
-                        <h5>Ajouter Client</h5>
+                        <h5>Modifier Client</h5>
                     </div>
                     <div class="card-body">
                         <form action="?action=modifclient" method="POST">

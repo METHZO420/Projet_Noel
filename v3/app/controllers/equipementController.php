@@ -5,15 +5,16 @@ class EquipementController{
         global $mep;
         extract($_POST);
        $mep->ajoutequipement($nom, $etat, $disponibilite);
-   
        header(header: 'location:../public/index.php?redirect=Gestionequipement');
     }
    
    
    function index()
    {          global $mep;
+    global $twige;
         $equipement =$mep->getallequipement();
-       require_once"../app/views/equipement/show.php";
+        echo $twige->render('show.html.twig', ['equipements' => $equipement]);
+
    }
    function supprimerequipement(){
     global $mep;
@@ -32,7 +33,7 @@ class EquipementController{
        $nomval=$_GET['nom'];
        $etatval=$_GET['etat'];
        $disponibiliteval=$_GET['disponibilite'];   
-       require_once"../app/views/equipement/edit.php";
+       require_once"../app/views/equipement/edit.html.twig";
    }
 }
 
