@@ -3,8 +3,9 @@ class AnimauxController{
     function indexanimal()
     {  
         global $ma;
+        global $twiga;
          $animals=$ma->getallanimal();
-        require_once"../app/views/animal/show.php";
+         echo $twiga->render('show.html.twig', ['animals' => $animals]);
     }
     function addanimal() {
         global $ma;
@@ -35,7 +36,7 @@ class AnimauxController{
         $ageval=$_GET['age'];
         $santeval=$_GET['sante'];
 
-        require_once"../app/views/animal/edit.php";
+        require_once"../app/views/animal/edit.html.twig";
     }
 }
 
